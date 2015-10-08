@@ -53,6 +53,18 @@
             </intent-filter>
 
         </activity>
+
+        <service
+            android:name=".MainService"
+            android:label="@string/activity_query_label"
+            android:permission="com.worldline.permissions.REQUEST_INFO">
+
+            <intent-filter>
+                <action android:name="com.worldline.permissions.server.REQUEST_INFO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </service>
     </application>
 
 </manifest>
