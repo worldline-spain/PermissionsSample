@@ -33,6 +33,20 @@ com.worldline.permissions.WRITE_PERMISSIONS
 com.worldline.permissions.ADD_INFO
 ```
 
+## DEMO
+
+First install **server app**
+
+```
+gradlew serverapp:installDebug
+```
+
+Install **permissions app**
+
+```
+gradlew installGrantDebug installDeniedDebug
+```
+
 ## LICENSE ##
 
     Copyright 2015 Wordline Spain
