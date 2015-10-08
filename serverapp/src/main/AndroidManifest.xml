@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.worldline.permissions.serverapp">
 
+    <permission-tree android:name="com.worldline.permissions" android:label="Worldline permissions"/>
+
     <permission-group android:name="com.worldline.permissions.READ_PERMISSIONS" />
     <permission-group android:name="com.worldline.permissions.WRITE_PERMISSIONS" />
 
@@ -38,6 +40,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".QueryInfoActivity"
+            android:label="@string/activity_query_label"
+            android:permission="com.worldline.permissions.QUERY_INFO">
+
+            <intent-filter>
+                <action android:name="com.worldline.permissions.server.QUERY_APP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
         </activity>
     </application>
 
