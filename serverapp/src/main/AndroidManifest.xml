@@ -79,6 +79,15 @@
             </intent-filter>
 
         </receiver>
+
+        <provider
+            android:name=".MainContentProvider"
+            android:authorities="com.worldline.permissions.serverapp"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/receiver_add_label"
+            android:readPermission="com.worldline.permissions.QUERY_INFO"
+            android:writePermission="com.worldline.permissions.ADD_INFO" />
     </application>
 
 </manifest>
