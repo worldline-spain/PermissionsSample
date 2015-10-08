@@ -1,5 +1,6 @@
 package com.worldline.permissions.sample;
 
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -96,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (SecurityException se) {
             se.printStackTrace();
             Snackbar.make(content, "Permission QUERY_INFO not available", Snackbar.LENGTH_SHORT).show();
+        } catch (ActivityNotFoundException nfe) {
+            Snackbar.make(content, "Server app not found", Snackbar.LENGTH_SHORT).show();
         }
     }
 
