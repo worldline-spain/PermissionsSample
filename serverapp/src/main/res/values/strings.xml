@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Server Permissions</string>
+
+    <string name="permission_add_info_label">Add info to server app</string>
+    <string name="permission_add_info_description">Allow external apps to set information</string>
+
+    <string name="permission_request_info_label">Request info from server app</string>
+    <string name="permission_request_info_description">Allow external apps to get information</string>
+
+    <string name="permission_query_info_label">Query info from server app</string>
+    <string name="permission_query_info_description">Allow external apps to query information</string>
 </resources>

@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.worldline.permissions.serverapp" >
+    package="com.worldline.permissions.serverapp">
+
+    <permission-group android:name="com.worldline.permissions.READ_PERMISSIONS" />
+    <permission-group android:name="com.worldline.permissions.WRITE_PERMISSIONS" />
+
+    <permission
+        android:name="com.worldline.permissions.REQUEST_INFO"
+        android:description="@string/permission_request_info_description"
+        android:label="@string/permission_request_info_label"
+        android:permissionGroup="com.worldline.permissions.PERMISSIONS"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.worldline.permissions.QUERY_INFO"
+        android:description="@string/permission_query_info_description"
+        android:label="@string/permission_query_info_label"
+        android:permissionGroup="com.worldline.permissions.PERMISSIONS"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.worldline.permissions.ADD_INFO"
+        android:description="@string/permission_add_info_description"
+        android:label="@string/permission_add_info_label"
+        android:permissionGroup="com.worldline.permissions.PERMISSIONS"
+        android:protectionLevel="dangerous" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
