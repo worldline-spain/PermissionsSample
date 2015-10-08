@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.worldline.permissions.serverapp">
 
-    <permission-tree android:name="com.worldline.permissions" android:label="Worldline permissions"/>
+    <permission-tree
+        android:name="com.worldline.permissions"
+        android:label="Worldline permissions" />
 
     <permission-group android:name="com.worldline.permissions.READ_PERMISSIONS" />
     <permission-group android:name="com.worldline.permissions.WRITE_PERMISSIONS" />
@@ -26,7 +28,7 @@
         android:description="@string/permission_add_info_description"
         android:label="@string/permission_add_info_label"
         android:permissionGroup="com.worldline.permissions.PERMISSIONS"
-        android:protectionLevel="dangerous" />
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -56,7 +58,7 @@
 
         <service
             android:name=".MainService"
-            android:label="@string/activity_query_label"
+            android:label="@string/service_request_label"
             android:permission="com.worldline.permissions.REQUEST_INFO">
 
             <intent-filter>
@@ -65,6 +67,18 @@
             </intent-filter>
 
         </service>
+
+        <receiver
+            android:name=".MainReceiver"
+            android:enabled="true"
+            android:label="@string/receiver_add_label"
+            android:permission="com.worldline.permissions.ADD_INFO">
+
+            <intent-filter>
+                <action android:name="com.worldline.permissions.server.ADD_INFO" />
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

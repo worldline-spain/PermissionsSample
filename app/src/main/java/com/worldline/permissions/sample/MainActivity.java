@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String QUERY_ACTION = "com.worldline.permissions.server.QUERY_APP";
     public static final String BIND_ACTION = "com.worldline.permissions.server.REQUEST_INFO";
+    public static final String BROADCAST_ACTION = "com.worldline.permissions.server.ADD_INFO";
 
     private View content;
     private TextView serviceContent;
@@ -76,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 bindExternalService();
             }
         });
+
+        findViewById(R.id.broadcastData).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendBroadcastEvent();
+            }
+        });
     }
 
     private void launchQueryActivity() {
@@ -118,5 +127,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void setData(Object data) {
         serviceContent.setText(serviceContent.getText().toString() + "\n" + (data.getClass()) + ": " + String.valueOf(data));
+    }
+
+    private void sendBroadcastEvent() {
+        Intent intent = new Intent();
+        intent.setAction(BROADCAST_ACTION);
+
+        sendBroadcast(intent);
     }
 }

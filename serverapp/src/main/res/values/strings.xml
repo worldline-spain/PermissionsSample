@@ -9,5 +9,8 @@
 
     <string name="permission_query_info_label">Query info from server app</string>
     <string name="permission_query_info_description">Allow external apps to query information</string>
+
     <string name="activity_query_label">Query activity</string>
+    <string name="service_request_label">Request info service</string>
+    <string name="receiver_add_label">Add receiver</string>
 </resources>
